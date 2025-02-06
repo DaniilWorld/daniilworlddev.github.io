@@ -1,0 +1,9 @@
+.about_p span:nth-child(1),
+.about_p span:nth-child(2),
+.about_p span:nth-child(3) {
+    color: green;
+}
+
+.about_p span:nth-child(4) {
+    color: orange;
+} 
