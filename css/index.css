@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", serif;
+    color: white;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    background-color: #121212;
+}
+
+.background-shapes {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.2;
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+    background: #333435;
+    animation: spin 10s infinite linear;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    background: #333435;
+    border-radius: 50%;
+    animation: spin 8s infinite linear;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 60px solid #333435;
+    animation: spin 12s infinite linear;
+}
+
+.shape:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: -2s;
+}
+
+.shape:nth-child(2) {
+    top: 40%;
+    right: 20%;
+    animation-delay: -4s;
+}
+
+.shape:nth-child(3) {
+    bottom: 30%;
+    left: 30%;
+    animation-delay: -6s;
+}
+
+.shape:nth-child(4) {
+    bottom: 10%;
+    right: 15%;
+    animation-delay: -8s;
+}
+
+.shape:nth-child(5) {
+    top: 10%;
+    right: 30%;
+    animation-delay: -10s;
+}
+
+.shape:nth-child(6) {
+    top: 70%;
+    right: 30%;
+    animation-delay: -10s;
+}
+
+.shape:nth-child(7) {
+    top: 13%;
+    right: 40%;
+    animation-delay: -10s;
+}
+
+.shape:nth-child(8) {
+    top: 80%;
+    right: 35%;
+    animation-delay: -10s;
+}
+
+.shape:nth-child(9) {
+    top: 45%;
+    right: 60%;
+    animation-delay: -10s;
+}
+
+.shape:nth-child(10) {
+    top: 30%;
+    right: 50%;
+    animation-delay: -4s;
+}
+
+.shape:nth-child(11) {
+    top: 20%;
+    right: 60%;
+    animation-delay: -4s;
+}
+
+.shape:nth-child(12) {
+    top: 40%;
+    right: 80%;
+    animation-delay: -4s;
+}
+
+.shape:nth-child(13) {
+    top: 90%;
+    right: 90%;
+    animation-delay: -4s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+header {
+    background-color: #fff;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header_continer {
+    width: 50vw;
+    margin-left: 25vw;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header .button {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #000000;
+    font-size: 20px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.main_continer {
+    width: 50vw;
+    margin-left: 25vw;
+}
+
+h1 {
+    color: white;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 60px;
+    transition: 0.3s;
+    position: relative;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1:hover {
+    color: rgb(149, 149, 149);
+    transition: 0.3s;
+}
+
+.custom-tooltip {
+    position: relative;
+}
+
+.custom-tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.custom-tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.about_p {
+    color: white;
+    font-size: 25px;
+    margin-top: 50px;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeIn 0.4s ease-in forwards;
+    animation-delay: 0.4s;
+}
+
+.about_p a {
+    text-decoration: none;
+    color: #888888;
+    transition: color 0.3s ease;
+}
+
+.about_p a:hover {
+    color: #666666;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.my_nike {
+    opacity: 0;
+    animation: fadeInTop 0.4s ease-in forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.copyright {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+}
+
+.button_list {
+    background: none;
+    border: none;
+    color: #4a9eff;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.button_list:hover {
+    color: #2980b9;
+}
+
+.logo {
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.logo:hover {
+    color: #333;
+    transform: scale(1.05);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .header_continer {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .menu {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .main_continer {
+        padding: 20px;
+        margin-top: 120px;
+    }
+
+    .my_nike {
+        font-size: 70px !important;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .background-shapes {
+        display: none;
+    }
+
+    .header_continer {
+        padding: 5px;
+    }
+
+    .logo {
+        font-size: 1.2em;
+    }
+
+    .button, .dropbtn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .dropdown-content {
+        min-width: 120px;
+    }
+
+    .my_nike {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .main_continer {
+        padding: 30px;
+        max-width: 90%;
+    }
+}
+
+/* Стили для бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+/* Класс для активного состояния бургер-меню */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Обновляем медиа-запрос для экранов меньше 1200px */
+@media screen and (max-width: 1200px) {
+    .header_continer {
+        position: relative;
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .menu-container {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px 0;
+        display: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .menu-container.active {
+        display: block;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #f1f1f1;
+        margin-top: 10px;
+    }
+
+    .main_continer {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 1072px) {
+    .my_nike {
+        font-size: 45px;
+    }
+    .about_p {
+        font-size: 20px;
+    }
+}
